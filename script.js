@@ -1,12 +1,9 @@
 const cauChu = [
-    "nôn làm.",
+    "nốn lấm.",
     "mày bị ngu à",
     "con óc lợn",
     "chó ngu",
-    "bấm nữa đi",
-    "đọc nổi không?",
-    "tốn thời gian ghê",
-    "lại bấm hả?"
+    "tốn thời gian ghê"
 ];
 
 function xaChu() {
