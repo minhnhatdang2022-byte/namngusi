@@ -1,43 +1,34 @@
-const cauSatThuong = [
-    "BẤM VÔ NGHĨA.",
-    "LẠI LÀ BẠN À?",
-    "TỐN THỜI GIAN GHÊ.",
-    "BẤM HOÀI VẪN BẤM.",
-    "KHÔNG HỌC ĐƯỢC GÌ À?",
-    "ĐÂY LÀ VIỆC BẠN CHỌN SAO?",
-    "RỒI CŨNG CHẲNG CÓ GÌ.",
-    "TẬP TRUNG LÊN.",
-    "BẠN ĐANG LÀM GÌ VẬY?",
-    "THÊM MỘT LẦN NỮA."
+const cauChu = [
+    "BẤM VẬY ĐỂ LÀM GÌ?",
+    "KHÔNG CÓ GÌ Ở ĐÂY CẢ.",
+    "BẠN ĐANG LÃNG PHÍ THỜI GIAN.",
+    "ĐỌC XONG CHƯA?",
+    "RỒI SAO NỮA?",
+    "VẪN CỐ BẤM.",
+    "CHẲNG CÓ GÌ THAY ĐỔI.",
+    "DỪNG LẠI ĐƯỢC RỒI."
 ];
 
-function xaSatThuong() {
-    // rung màn hình
+let dangHien = false;
+
+function xaChu() {
+    // không cho spam chồng chữ
+    if (dangHien) return;
+    dangHien = true;
+
+    // rung màn hình nhẹ
     document.body.classList.add("shake");
-    setTimeout(() => document.body.classList.remove("shake"), 700);
+    setTimeout(() => document.body.classList.remove("shake"), 600);
 
-    // xả chữ nhiều hơn
-    for (let i = 0; i < 30; i++) {
-        taoHit();
-    }
-}
-
-function taoHit() {
     const d = document.createElement("div");
     d.className = "hit";
-    d.innerText = cauSatThuong[Math.floor(Math.random() * cauSatThuong.length)];
-
-    d.style.left = Math.random() * window.innerWidth + "px";
-    d.style.top = Math.random() * window.innerHeight + "px";
-    d.style.fontSize = (18 + Math.random() * 28) + "px";
-    d.style.color = mauManh();
+    d.innerText = cauChu[Math.floor(Math.random() * cauChu.length)];
 
     document.body.appendChild(d);
 
-    setTimeout(() => d.remove(), 2200);
-}
-
-function mauManh() {
-    const colors = ["#ff0000", "#ffea00", "#ff6a00", "#00ffcc", "#ff00ff"];
-    return colors[Math.floor(Math.random() * colors.length)];
+    // cho đọc đủ lâu
+    setTimeout(() => {
+        d.remove();
+        dangHien = false;
+    }, 5000);
 }
