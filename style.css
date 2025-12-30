@@ -1,63 +1,67 @@
 body {
     margin: 0;
     height: 100vh;
-    background: #0b0b0b;
+    background: #111;
     overflow: hidden;
     font-family: Arial, sans-serif;
 }
 
-/* nút */
+/* nút bấm */
 #nut {
     position: absolute;
-    top: 50%;
+    top: 80%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 22px 34px;
+    transform: translateX(-50%);
+    padding: 18px 30px;
     font-size: 20px;
     cursor: pointer;
     z-index: 10;
 }
 
-/* chữ sát thương */
+/* chữ hiện rõ */
 .hit {
     position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
     font-weight: 900;
+    font-size: 42px;
+    color: #ff3333;
+    text-shadow: 0 0 12px black;
+    opacity: 0;
+    animation: hien 5s ease forwards;
     white-space: nowrap;
-    animation: combo 2.2s ease-out forwards;
-    text-shadow: 0 0 10px black;
 }
 
-/* combo animation: rung + xoay + bay + phóng to */
-@keyframes combo {
+/* hiện → đứng yên → mờ dần */
+@keyframes hien {
     0% {
         opacity: 0;
-        transform: scale(0.5) rotate(0deg);
+        transform: translate(-50%, -50%) scale(0.8);
     }
     10% {
         opacity: 1;
-        transform: scale(1.2) rotate(5deg);
+        transform: translate(-50%, -50%) scale(1);
     }
-    30% {
-        transform: scale(1.6) rotate(-5deg) translateX(10px);
-    }
-    60% {
-        transform: scale(2) rotate(8deg) translateY(-60px);
+    80% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
     }
     100% {
         opacity: 0;
-        transform: scale(2.5) rotate(-12deg) translateY(-180px);
+        transform: translate(-50%, -50%) scale(1);
     }
 }
 
-/* rung màn hình */
+/* rung nhẹ để gây khó chịu */
 .shake {
-    animation: shake 0.15s infinite;
+    animation: shake 0.2s infinite;
 }
 
 @keyframes shake {
     0% { transform: translate(0); }
-    25% { transform: translate(6px, -6px); }
-    50% { transform: translate(-6px, 6px); }
-    75% { transform: translate(6px, 6px); }
+    25% { transform: translate(3px, -3px); }
+    50% { transform: translate(-3px, 3px); }
+    75% { transform: translate(3px, 3px); }
     100% { transform: translate(0); }
 }
