@@ -1,34 +1,63 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
+    margin: 0;
     height: 100vh;
-    background: linear-gradient(270deg, #667eea, #764ba2, #6dd5ed);
-    background-size: 600% 600%;
-    animation: gradientMove 10s ease infinite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Arial', sans-serif;
+    background: #0b0b0b;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
 }
 
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* nút */
+#nut {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 22px 34px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
 }
 
-.container {
-    text-align: center;
+/* chữ sát thương */
+.hit {
+    position: absolute;
+    font-weight: 900;
+    white-space: nowrap;
+    animation: combo 2.2s ease-out forwards;
+    text-shadow: 0 0 10px black;
 }
 
-#bigText {
-    font-size: 120px;
-    font-weight: bold;
-    color: white;
-    text-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    transition: transform 0.3s ease;
+/* combo animation: rung + xoay + bay + phóng to */
+@keyframes combo {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) rotate(0deg);
+    }
+    10% {
+        opacity: 1;
+        transform: scale(1.2) rotate(5deg);
+    }
+    30% {
+        transform: scale(1.6) rotate(-5deg) translateX(10px);
+    }
+    60% {
+        transform: scale(2) rotate(8deg) translateY(-60px);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(2.5) rotate(-12deg) translateY(-180px);
+    }
+}
+
+/* rung màn hình */
+.shake {
+    animation: shake 0.15s infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(0); }
+    25% { transform: translate(6px, -6px); }
+    50% { transform: translate(-6px, 6px); }
+    75% { transform: translate(6px, 6px); }
+    100% { transform: translate(0); }
 }
