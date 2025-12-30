@@ -1,9 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const cauChu = [
-        "nôn làm.",
-        "mày bị ngu à",
-        "con óc lợn",
-        "chó ngu"
+        "phốt lùng bị ngốn lào"
     ];
 
     const container = document.querySelector('.image-container');
