@@ -1,12 +1,5 @@
 const cauChu = [
-    "BẤM VẬY ĐỂ LÀM GÌ?",
-    "KHÔNG CÓ GÌ Ở ĐÂY CẢ.",
-    "BẠN ĐANG LÃNG PHÍ THỜI GIAN.",
-    "ĐỌC XONG CHƯA?",
-    "RỒI SAO NỮA?",
-    "VẪN CỐ BẤM.",
-    "CHẲNG CÓ GÌ THAY ĐỔI.",
-    "DỪNG LẠI ĐƯỢC RỒI."
+    "nôn làm."
 ];
 
 let dangHien = false;
