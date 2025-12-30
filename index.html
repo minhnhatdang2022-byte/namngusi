@@ -2,13 +2,19 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>BẤM LÀ ĂN ĐỦ</title>
+    <title>Bấm để gặp chính chủ</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="start-container">
+        <button id="startBtn">BẤM ĐI</button>
+    </div>
 
-<button id="nut" onclick="xaChu()">BẤM ĐI</button>
-
-<script src="script.js"></script>
+    <script>
+        const startBtn = document.getElementById('startBtn');
+        startBtn.addEventListener('click', () => {
+            window.location.href = 'page.html';
+        });
+    </script>
 </body>
 </html>
