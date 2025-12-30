@@ -9,7 +9,7 @@ body {
 /* nút bấm */
 #nut {
     position: absolute;
-    top: 80%;
+    top: 85%;
     left: 50%;
     transform: translateX(-50%);
     padding: 18px 30px;
@@ -18,42 +18,22 @@ body {
     z-index: 10;
 }
 
-/* chữ hiện rõ */
+/* chữ hiển thị */
 .hit {
     position: absolute;
-    left: 50%;
-    top: 45%;
-    transform: translate(-50%, -50%);
     font-weight: 900;
-    font-size: 42px;
-    color: #ff3333;
-    text-shadow: 0 0 12px black;
-    opacity: 0;
-    animation: hien 5s ease forwards;
     white-space: nowrap;
+    text-shadow: 0 0 8px black;
+    animation: bay 7s linear forwards;
 }
 
-/* hiện → đứng yên → mờ dần */
-@keyframes hien {
-    0% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.8);
-    }
-    10% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-    }
-    80% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-    }
-    100% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(1);
-    }
+/* bay lên + mờ dần */
+@keyframes bay {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-150px) rotate(30deg); opacity: 0; }
 }
 
-/* rung nhẹ để gây khó chịu */
+/* rung màn hình */
 .shake {
     animation: shake 0.2s infinite;
 }
