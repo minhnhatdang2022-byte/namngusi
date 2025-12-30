@@ -1,5 +1,8 @@
 const cauChu = [
     "nôn làm."
+    "mày bị ngu à"
+    "con óc lợn"
+    "chó ngu"
 ];
 
 let dangHien = false;
